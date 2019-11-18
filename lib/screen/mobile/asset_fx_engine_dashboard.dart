@@ -20,40 +20,59 @@ class _FxEngineAssetDashboardScreenState
       appBar: AppBar(
         title: Text("Fx Engine Dashboard"),
       ),
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[AssetTitleWidget(), SignUpButton()],
-              ),
-              SizedBox(
-                height: 16.0,
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: Stack(
-                    fit: StackFit.expand,
-                    alignment: Alignment.topLeft,
-                    children: <Widget>[
-                      AssetPredictionChartWidget(),
-                      Positioned(
-                        right: 0,
-                        top: 0,
-                        child: AssetTrendWidget(),
-                      )
-                    ],
-                  ),
+      body: LayoutBuilder(
+        builder: (context, viewPortConstraints) {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                  minHeight: viewPortConstraints.maxHeight,
+                  minWidth: viewPortConstraints.maxWidth),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[AssetTitleWidget(), SignUpButton()],
+                    ),
+                    SizedBox(
+                      height: 16.0,
+                    ),
+                    Container(
+                      height: viewPortConstraints.maxHeight * 4 / 6,
+                      color: Colors.grey,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Stack(
+                          fit: StackFit.expand,
+                          alignment: Alignment.topLeft,
+                          children: <Widget>[
+                            Positioned(
+                              top: 0,
+                              left: 0,
+                              child: AssetPredictionChartWidget(),
+                            ),
+                            Positioned(
+                              right: 0,
+                              top: 0,
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 4.0),
+                                child: AssetTrendWidget(),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    AssetPredictionCardListViewWidget()
+                  ],
                 ),
               ),
-              AssetPredictionCardListViewWidget()
-            ],
-          ),
-        ),
+            ),
+          );
+        },
       ),
     );
   }

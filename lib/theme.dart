@@ -23,6 +23,12 @@ const bearishSignalColor = color03;
 const primaryColor = color08;
 const accentColor = color07;
 final ThemeData base = ThemeData.dark();
+
+const numberTextFontFamily = 'OpenSans';
+
+const cardBackgroundColor = color06;
+const cardBackgroundColorFade = color05;
+
 var defaultTheme = ThemeData(
 // Define the default brightness and colors.
   brightness: Brightness.dark,
@@ -45,14 +51,14 @@ var defaultTheme = ThemeData(
         TextStyle(fontSize: 36.0, fontStyle: FontStyle.normal, color: color06),
     subtitle: TextStyle(
         fontSize: 24.0, fontStyle: FontStyle.normal, color: subTitleColor),
-    body1: TextStyle(fontSize: 14.0),
-    body2: TextStyle(fontSize: 18.0, fontFamily: "OpenSans"),
-    display1: TextStyle(fontSize: 12.0),
-    display2: TextStyle(fontSize: 12.0, fontFamily: "OpenSans"),
-    display3: TextStyle(fontSize: 12.0),
-    display4: TextStyle(fontSize: 12.0, fontFamily: "OpenSans"),
+    body1: TextStyle(fontSize: 18.0),
+    body2: TextStyle(fontSize: 14.0),
+    display1: TextStyle(fontSize: 18.0),
+    display2: TextStyle(fontSize: 16.0),
+    display3: TextStyle(fontSize: 14.0),
+    display4: TextStyle(fontSize: 12.0),
     button: TextStyle(fontSize: 18.0),
-    caption: TextStyle(fontSize: 12.0),
+    caption: TextStyle(fontSize: 14.0),
     overline: TextStyle(fontSize: 12.0),
   ),
 );

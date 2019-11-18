@@ -38,7 +38,13 @@ class _FxEngineAssetDashboardScreenState
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     AssetPredictionChartWidget(),
-                    AssetPredictionCardListViewWidget()
+                    Container(
+                      width: 480,
+                      height: 480,
+                      child: SingleChildScrollView(
+                        child: AssetPredictionCardListViewWidget(),
+                      ),
+                    )
                   ],
                 )
               ],
