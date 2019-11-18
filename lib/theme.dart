@@ -13,12 +13,14 @@ const color10 = Color(0xFF21289D);
 const color11 = Color(0xFFF1F1F6);
 const color12 = Color(0xFF333333);
 
+const buttonColor = color02;
+
 const bullSignalColor = color02;
 const bearishSignalColor = color03;
 
 const primaryColor = color08;
 const accentColor = color07;
-
+final ThemeData base = ThemeData.dark();
 var defaultTheme = ThemeData(
 // Define the default brightness and colors.
   brightness: Brightness.dark,
@@ -28,6 +30,10 @@ var defaultTheme = ThemeData(
 // Define the default font family.
   fontFamily: 'Raleway',
 
+  buttonTheme: base.buttonTheme.copyWith(
+      buttonColor: buttonColor,
+      textTheme: ButtonTextTheme.primary,
+      colorScheme: ColorScheme.dark().copyWith(primary: buttonColor)),
 // Define the default TextTheme. Use this to specify the default
 // text styling for headlines, titles, bodies of text, and more.
   textTheme: TextTheme(
@@ -41,7 +47,7 @@ var defaultTheme = ThemeData(
     display2: TextStyle(fontSize: 12.0, fontFamily: "OpenSans"),
     display3: TextStyle(fontSize: 12.0),
     display4: TextStyle(fontSize: 12.0, fontFamily: "OpenSans"),
-    button: TextStyle(fontSize: 12.0),
+    button: TextStyle(fontSize: 18.0),
     caption: TextStyle(fontSize: 12.0),
     overline: TextStyle(fontSize: 12.0),
   ),
