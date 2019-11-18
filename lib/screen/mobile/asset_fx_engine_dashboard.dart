@@ -1,4 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fx_engine_app/widget/asset_prediction_card_list.dart';
+import 'package:fx_engine_app/widget/asset_prediction_chart.dart';
+import 'package:fx_engine_app/widget/asset_title_widget.dart';
+import 'package:fx_engine_app/widget/asset_trend_detail.dart';
+import 'package:fx_engine_app/widget/signup_button.dart';
 
 class FxEngineAssetDashboardScreen extends StatefulWidget {
   @override
@@ -11,9 +17,33 @@ class _FxEngineAssetDashboardScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Fx Engine Dashboard"),
+      ),
       body: Container(
-        child: Center(
-          child: Text("Mobile App"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[AssetTitleWidget(), SignUpButton()],
+            ),
+            Expanded(
+              child: Stack(
+                fit: StackFit.expand,
+                alignment: Alignment.topLeft,
+                children: <Widget>[
+                  AssetTrendWidget(),
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    child: AssetPredictionChartWidget(),
+                  )
+                ],
+              ),
+            ),
+            AssetPredictionCardListViewWidget()
+          ],
         ),
       ),
     );

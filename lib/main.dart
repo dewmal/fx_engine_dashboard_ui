@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:fx_engine_app/screen/web/asset_fx_engine_dashboard.dart' as web;
 import 'package:fx_engine_app/screen/mobile/asset_fx_engine_dashboard.dart'
     as mobile;
+import 'package:fx_engine_app/theme.dart';
+
+import 'constants.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,35 +16,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: APP_TITLE,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.blue,
-      ),
+      theme: defaultTheme,
       themeMode: ThemeMode.dark,
-      darkTheme: ThemeData(
-          brightness: Brightness.dark, primaryColor: Colors.redAccent),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      darkTheme: defaultTheme.copyWith(brightness: Brightness.dark),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  static String get operatingSystem =>
-      String.fromEnvironment("dart.platform.os");
-
-//  static final bool isLinux = (_operatingSystem == "linux");
-
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;

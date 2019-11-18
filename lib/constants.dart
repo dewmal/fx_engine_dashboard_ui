@@ -1,3 +1,5 @@
+const APP_TITLE = "Fx Engine Dashboard";
+
 //const API_BASE_URL = "http://api.ceylonfx.com";
 const HOST = "52.117.39.84";
 const PORT = "5656";

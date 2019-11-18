@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fx_engine_app/widget/asset_prediction_card_list.dart';
+import 'package:fx_engine_app/widget/asset_prediction_chart.dart';
+import 'package:fx_engine_app/widget/asset_title_widget.dart';
+import 'package:fx_engine_app/widget/asset_trend_detail.dart';
+import 'package:fx_engine_app/widget/signup_button.dart';
 
 class FxEngineAssetDashboardScreen extends StatefulWidget {
   @override
@@ -12,8 +17,33 @@ class _FxEngineAssetDashboardScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Center(
-          child: Text("Web App"),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        AssetTitleWidget(),
+                        AssetTrendWidget()
+                      ],
+                    ),
+                    SignUpButton()
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    AssetPredictionChartWidget(),
+                    AssetPredictionCardListViewWidget()
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
