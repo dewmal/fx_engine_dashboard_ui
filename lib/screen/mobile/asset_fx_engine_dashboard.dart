@@ -21,29 +21,32 @@ class _FxEngineAssetDashboardScreenState
         title: Text("Fx Engine Dashboard"),
       ),
       body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[AssetTitleWidget(), SignUpButton()],
-            ),
-            Expanded(
-              child: Stack(
-                fit: StackFit.expand,
-                alignment: Alignment.topLeft,
-                children: <Widget>[
-                  AssetTrendWidget(),
-                  Positioned(
-                    right: 0,
-                    top: 0,
-                    child: AssetPredictionChartWidget(),
-                  )
-                ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[AssetTitleWidget(), SignUpButton()],
               ),
-            ),
-            AssetPredictionCardListViewWidget()
-          ],
+              Expanded(
+                child: Stack(
+                  fit: StackFit.expand,
+                  alignment: Alignment.topLeft,
+                  children: <Widget>[
+                    AssetTrendWidget(),
+                    Positioned(
+                      right: 0,
+                      top: 0,
+                      child: AssetPredictionChartWidget(),
+                    )
+                  ],
+                ),
+              ),
+              AssetPredictionCardListViewWidget()
+            ],
+          ),
         ),
       ),
     );

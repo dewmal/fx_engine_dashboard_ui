@@ -13,6 +13,8 @@ const color10 = Color(0xFF21289D);
 const color11 = Color(0xFFF1F1F6);
 const color12 = Color(0xFF333333);
 
+const subTitleColor = color08;
+
 const buttonColor = color02;
 
 const bullSignalColor = color02;
@@ -39,8 +41,10 @@ var defaultTheme = ThemeData(
   textTheme: TextTheme(
     headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
     subhead: TextStyle(fontSize: 54.0, fontWeight: FontWeight.normal),
-    title: TextStyle(fontSize: 36.0, fontStyle: FontStyle.normal),
-    subtitle: TextStyle(fontSize: 24.0, fontStyle: FontStyle.normal),
+    title:
+        TextStyle(fontSize: 36.0, fontStyle: FontStyle.normal, color: color06),
+    subtitle: TextStyle(
+        fontSize: 24.0, fontStyle: FontStyle.normal, color: subTitleColor),
     body1: TextStyle(fontSize: 14.0),
     body2: TextStyle(fontSize: 14.0, fontFamily: "OpenSans"),
     display1: TextStyle(fontSize: 12.0),
