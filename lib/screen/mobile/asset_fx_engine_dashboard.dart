@@ -30,18 +30,24 @@ class _FxEngineAssetDashboardScreenState
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[AssetTitleWidget(), SignUpButton()],
               ),
+              SizedBox(
+                height: 16.0,
+              ),
               Expanded(
-                child: Stack(
-                  fit: StackFit.expand,
-                  alignment: Alignment.topLeft,
-                  children: <Widget>[
-                    AssetTrendWidget(),
-                    Positioned(
-                      right: 0,
-                      top: 0,
-                      child: AssetPredictionChartWidget(),
-                    )
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Stack(
+                    fit: StackFit.expand,
+                    alignment: Alignment.topLeft,
+                    children: <Widget>[
+                      AssetPredictionChartWidget(),
+                      Positioned(
+                        right: 0,
+                        top: 0,
+                        child: AssetTrendWidget(),
+                      )
+                    ],
+                  ),
                 ),
               ),
               AssetPredictionCardListViewWidget()
