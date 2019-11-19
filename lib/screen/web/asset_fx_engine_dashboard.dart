@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fx_engine_app/service/symbol_list.dart';
 import 'package:fx_engine_app/widget/asset_prediction_card_list.dart';
 import 'package:fx_engine_app/widget/asset_prediction_chart.dart';
 import 'package:fx_engine_app/widget/asset_title_widget.dart';
@@ -16,6 +17,7 @@ class _FxEngineAssetDashboardScreenState
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
+    var symbol = AssetSymbol.EUR_USD;
     return Scaffold(
       body: Container(
         child: Padding(
@@ -29,7 +31,9 @@ class _FxEngineAssetDashboardScreenState
                     Row(
                       children: <Widget>[
                         AssetTitleWidget(),
-                        AssetTrendWidget()
+                        AssetTrendWidget(
+                          symbol: symbol,
+                        )
                       ],
                     ),
                     SignUpButton()

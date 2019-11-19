@@ -1,4 +1,4 @@
-enum Symbol {
+enum AssetSymbol {
   EUR_USD,
   EUR_GBP,
   EUR_JPY,
@@ -13,24 +13,24 @@ enum Symbol {
   USD_CAD
 }
 
-const symbolList = <Symbol>[
-  Symbol.EUR_USD,
-  Symbol.GBP_USD,
-  Symbol.USD_JPY,
-  Symbol.USD_CHF,
-  Symbol.EUR_GBP,
-  Symbol.EUR_JPY,
-  Symbol.EUR_CHF,
-  Symbol.GBP_JPY,
-  Symbol.AUD_CHF,
-  Symbol.EUR_CAD,
-  Symbol.CAD_CHF,
-  Symbol.USD_CAD
+const symbolList = <AssetSymbol>[
+  AssetSymbol.EUR_USD,
+  AssetSymbol.GBP_USD,
+  AssetSymbol.USD_JPY,
+  AssetSymbol.USD_CHF,
+  AssetSymbol.EUR_GBP,
+  AssetSymbol.EUR_JPY,
+  AssetSymbol.EUR_CHF,
+  AssetSymbol.GBP_JPY,
+  AssetSymbol.AUD_CHF,
+  AssetSymbol.EUR_CAD,
+  AssetSymbol.CAD_CHF,
+  AssetSymbol.USD_CAD
 ];
 
-String getSymbolLabel(Symbol symbol) {
-  return "$symbol".replaceAll("Symbol.", "").replaceAll("_", "/");
+String getSymbolLabel(AssetSymbol symbol) {
+  return "$symbol".replaceAll("AssetSymbol.", "").replaceAll("_", "/");
 }
-String getSymbolValue(Symbol symbol) {
-  return "$symbol".replaceAll("Symbol.", "");
+String getSymbolValue(AssetSymbol symbol) {
+  return "$symbol".replaceAll("AssetSymbol.", "");
 }

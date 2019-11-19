@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fx_engine_app/service/symbol_list.dart';
 import 'package:fx_engine_app/widget/asset_prediction_card_list.dart';
 import 'package:fx_engine_app/widget/asset_prediction_chart.dart';
 import 'package:fx_engine_app/widget/asset_title_widget.dart';
 import 'package:fx_engine_app/widget/asset_trend_detail.dart';
-import 'package:fx_engine_app/widget/signup_button.dart';
 
 class FxEngineAssetDashboardScreen extends StatefulWidget {
   @override
@@ -48,7 +48,9 @@ class _FxEngineAssetDashboardScreenState
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         AssetTitleWidget(),
-                        AssetTrendWidget()
+                        AssetTrendWidget(
+                          symbol: AssetSymbol.EUR_USD,
+                        )
                       ],
                     ),
                     SizedBox(

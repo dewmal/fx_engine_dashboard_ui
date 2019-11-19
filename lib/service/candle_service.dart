@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:fx_engine_app/constants.dart';
-import 'package:fx_engine_app/models/Candle.dart';
+import 'package:fx_engine_app/model/Candle.dart';
 import 'package:http/http.dart' as http;
-import 'package:web_socket_channel/html.dart';
+import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 Future<http.Response> fetchCandleJsonList(symbol, limit) {
@@ -38,11 +38,10 @@ Future<List<Candle>> fetchCandles(symbol, limit) async {
 }
 
 WebSocketChannel connectTickStream(symbol) {
-  return HtmlWebSocketChannel.connect(
+  return IOWebSocketChannel.connect(
       '$API_WS_BASE_URL/tick/$symbol/TickSpotData');
 }
 
 WebSocketChannel connectCandleStream(symbol) {
-  return HtmlWebSocketChannel.connect(
-      '$API_WS_BASE_URL/tick/$symbol/CandleData');
+  return IOWebSocketChannel.connect('$API_WS_BASE_URL/tick/$symbol/CandleData');
 }
