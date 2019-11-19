@@ -39,11 +39,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
-    if (media.width < 800) {
-      return mobile.FxEngineAssetDashboardScreen();
-    } else {
-      return web.FxEngineAssetDashboardScreen();
-    }
+//    var media = MediaQuery.of(context).size;
+//    if (media.width < 800) {
+    return mobile.FxEngineAssetDashboardScreen();
+//    } else {
+//      return web.FxEngineAssetDashboardScreen();
+//    }
   }
 }

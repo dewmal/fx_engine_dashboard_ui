@@ -11,3 +11,7 @@ const API_WS_BASE_URL = "ws://$HOST:$PORT";
 
 const SYNCFU_CHART_LICENCE =
     "NT8mJyc2IWhiZH1gfWN9YmdoYmF8YGJ8ampqanNiYmlmamlmanMDHmg3NiQ+Mj89Oj8yPTgyEzQ+Mjo/fTA8Pg==";
+
+//const dateTimeFormatString = 'yyyy-MM-dd – kk:mm:ss';
+const dateTimeFormatString = 'MM.dd – kk:mm:ss';
+const percentageFormatString = "##.##";

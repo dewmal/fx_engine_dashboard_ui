@@ -6,17 +6,11 @@ import 'package:fx_engine_app/widget/asset_prediction_chart.dart';
 import 'package:fx_engine_app/widget/asset_title_widget.dart';
 import 'package:fx_engine_app/widget/asset_trend_detail.dart';
 
-class FxEngineAssetDashboardScreen extends StatefulWidget {
-  @override
-  _FxEngineAssetDashboardScreenState createState() =>
-      _FxEngineAssetDashboardScreenState();
-}
-
-class _FxEngineAssetDashboardScreenState
-    extends State<FxEngineAssetDashboardScreen> {
+class FxEngineAssetDashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    var symbol = AssetSymbol.EUR_USD;
 
     return Scaffold(
       appBar: AppBar(
@@ -49,7 +43,7 @@ class _FxEngineAssetDashboardScreenState
                       children: <Widget>[
                         AssetTitleWidget(),
                         AssetTrendWidget(
-                          symbol: AssetSymbol.EUR_USD,
+                          symbol: symbol,
                         )
                       ],
                     ),
@@ -85,7 +79,7 @@ class _FxEngineAssetDashboardScreenState
                         ),
                       ),
                     ),
-                    AssetPredictionCardListViewWidget()
+                    AssetPredictionCardListViewWidget(symbol: symbol)
                   ],
                 ),
               ),

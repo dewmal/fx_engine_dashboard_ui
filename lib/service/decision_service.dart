@@ -10,7 +10,7 @@ import '../constants.dart';
 
 Future<http.Response> fetchDecisionsJson(symbol, interval, limit, status) {
   var url = '$API_BASE_URL/decisions/$symbol/$interval/$limit/$status/';
-  print(url);
+//  print(url);
   return http.get(url);
 }
 

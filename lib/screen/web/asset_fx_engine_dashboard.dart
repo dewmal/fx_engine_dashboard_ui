@@ -50,7 +50,8 @@ class _FxEngineAssetDashboardScreenState
                       height: media.height * 6 / 8,
                       width: media.width * 10 / 36,
                       child: SingleChildScrollView(
-                        child: AssetPredictionCardListViewWidget(),
+                        child:
+                            AssetPredictionCardListViewWidget(symbol: symbol),
                       ),
                     )
                   ],
