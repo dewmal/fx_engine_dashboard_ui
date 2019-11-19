@@ -28,6 +28,7 @@ const numberTextFontFamily = 'OpenSans';
 
 const cardBackgroundColor = color06;
 const cardBackgroundColorFade = color05;
+const defaultTextColor = color11;
 
 var defaultTheme = ThemeData(
 // Define the default brightness and colors.
