@@ -16,9 +16,20 @@ class _FxEngineAssetDashboardScreenState
     extends State<FxEngineAssetDashboardScreen> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Fx Engine Dashboard"),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+            child: FlatButton(
+              child: Icon(Icons.person_add),
+              onPressed: () {},
+            ),
+          )
+        ],
       ),
       body: LayoutBuilder(
         builder: (context, viewPortConstraints) {
@@ -35,14 +46,16 @@ class _FxEngineAssetDashboardScreenState
                   children: <Widget>[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[AssetTitleWidget(), SignUpButton()],
+                      children: <Widget>[
+                        AssetTitleWidget(),
+                        AssetTrendWidget()
+                      ],
                     ),
                     SizedBox(
                       height: 16.0,
                     ),
                     Container(
                       height: viewPortConstraints.maxHeight * 4 / 6,
-                      color: Colors.grey,
                       child: Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Stack(
@@ -52,16 +65,20 @@ class _FxEngineAssetDashboardScreenState
                             Positioned(
                               top: 0,
                               left: 0,
-                              child: AssetPredictionChartWidget(),
-                            ),
-                            Positioned(
-                              right: 0,
-                              top: 0,
-                              child: Padding(
-                                padding: const EdgeInsets.only(right: 4.0),
-                                child: AssetTrendWidget(),
+                              child: AssetPredictionChartWidget(
+                                parentHeight:
+                                    viewPortConstraints.maxHeight * 4 / 6,
+                                parentWidth: viewPortConstraints.maxWidth,
                               ),
-                            )
+                            ),
+//                            Positioned(
+//                              right: 0,
+//                              top: 0,
+//                              child: Padding(
+//                                padding: const EdgeInsets.only(right: 4.0),
+//                                child: AssetTrendWidget(),
+//                              ),
+//                            )
                           ],
                         ),
                       ),

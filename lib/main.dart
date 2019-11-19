@@ -6,10 +6,15 @@ import 'package:fx_engine_app/screen/web/asset_fx_engine_dashboard.dart' as web;
 import 'package:fx_engine_app/screen/mobile/asset_fx_engine_dashboard.dart'
     as mobile;
 import 'package:fx_engine_app/theme.dart';
+import 'package:syncfusion_flutter_core/core.dart';
 
 import 'constants.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  SyncfusionLicense.registerLicense(SYNCFU_CHART_LICENCE);
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

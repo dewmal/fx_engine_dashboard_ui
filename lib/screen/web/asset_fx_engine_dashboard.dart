@@ -15,6 +15,7 @@ class _FxEngineAssetDashboardScreenState
     extends State<FxEngineAssetDashboardScreen> {
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         child: Padding(
@@ -37,10 +38,13 @@ class _FxEngineAssetDashboardScreenState
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    AssetPredictionChartWidget(),
+                    AssetPredictionChartWidget(
+                      parentHeight: media.height * 6 / 8,
+                      parentWidth: media.width * 24 / 36,
+                    ),
                     Container(
-                      width: 480,
-                      height: 480,
+                      height: media.height * 6 / 8,
+                      width: media.width * 10 / 36,
                       child: SingleChildScrollView(
                         child: AssetPredictionCardListViewWidget(),
                       ),
